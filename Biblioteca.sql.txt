@@ -1,0 +1,53 @@
+CREATE TABLE Autores (
+    AutorID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255) NOT NULL,
+    DataNascimento DATE,
+    Pais VARCHAR(100)
+);
+
+CREATE TABLE Editoras (
+    EditoraID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255) NOT NULL,
+    Endereco VARCHAR(255)
+);
+
+CREATE TABLE Livros (
+    LivroID INT PRIMARY KEY AUTO_INCREMENT,
+    Titulo VARCHAR(255) NOT NULL,
+    AutorID INT,
+    EditoraID INT,
+    AnoPublicacao INT,
+    ISBN VARCHAR(20),
+    QuantidadeDisponivel INT,
+    FOREIGN KEY (AutorID) REFERENCES Autores(AutorID),
+    FOREIGN KEY (EditoraID) REFERENCES Editoras(EditoraID)
+);
+
+CREATE TABLE Leitores (
+    LeitorID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) UNIQUE,
+    Telefone VARCHAR(20),
+    DataCadastro DATE
+);
+
+CREATE TABLE Emprestimos (
+    EmprestimoID INT PRIMARY KEY AUTO_INCREMENT,
+    LeitorID INT,
+    LivroID INT,
+    DataEmprestimo DATE NOT NULL,
+    DataDevolucaoPrevista DATE NOT NULL,
+    DataDevolucaoReal DATE,
+    FOREIGN KEY (LeitorID) REFERENCES Leitores(LeitorID),
+    FOREIGN KEY (LivroID) REFERENCES Livros(LivroID)
+);
+
+CREATE TABLE Reservas (
+    ReservaID INT PRIMARY KEY AUTO_INCREMENT,
+    LeitorID INT,
+    LivroID INT,
+    DataReserva DATE NOT NULL,
+    Status VARCHAR(50) NOT NULL,
+    FOREIGN KEY (LeitorID) REFERENCES Leitores(LeitorID),
+    FOREIGN KEY (LivroID) REFERENCES Livros(LivroID)
+);

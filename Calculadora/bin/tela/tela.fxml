@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CalculadoraController" spacing="8" alignment="CENTER" prefWidth="320" prefHeight="480">
+  <children>
+    <TextField fx:id="display" editable="false" prefHeight="100" prefWidth="320" style="-fx-font-size:36px;" text="0"/>
+    <GridPane hgap="8" vgap="8">
+      <padding>
+        <Insets top="0" right="8" bottom="0" left="8"/>
+      </padding>
+      
+      <Button text="7" onAction="#onNumberAction" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="72" prefHeight="48"/>
+      <Button text="8" onAction="#onNumberAction" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="72" prefHeight="48"/>
+      <Button text="9" onAction="#onNumberAction" GridPane.rowIndex="0" GridPane.columnIndex="2" prefWidth="72" prefHeight="48"/>
+      <Button text="/" onAction="#onOperatorAction" GridPane.rowIndex="0" GridPane.columnIndex="3" prefWidth="72" prefHeight="48"/>
+      
+      <Button text="4" onAction="#onNumberAction" GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="72" prefHeight="48"/>
+      <Button text="5" onAction="#onNumberAction" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="72" prefHeight="48"/>
+      <Button text="6" onAction="#onNumberAction" GridPane.rowIndex="1" GridPane.columnIndex="2" prefWidth="72" prefHeight="48"/>
+      <Button text="x" onAction="#onOperatorAction" GridPane.rowIndex="1" GridPane.columnIndex="3" prefWidth="72" prefHeight="48"/>
+      
+      <Button text="1" onAction="#onNumberAction" GridPane.rowIndex="2" GridPane.columnIndex="0" prefWidth="72" prefHeight="48"/>
+      <Button text="2" onAction="#onNumberAction" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="72" prefHeight="48"/>
+      <Button text="3" onAction="#onNumberAction" GridPane.rowIndex="2" GridPane.columnIndex="2" prefWidth="72" prefHeight="48"/>
+      <Button text="-" onAction="#onOperatorAction" GridPane.rowIndex="2" GridPane.columnIndex="3" prefWidth="72" prefHeight="48"/>
+      
+      <Button text="0" onAction="#onNumberAction" GridPane.rowIndex="3" GridPane.columnIndex="0" prefWidth="72" prefHeight="48"/>
+      <Button text="." onAction="#onDotAction" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="72" prefHeight="48"/>
+      <Button text="=" onAction="#onEqualsAction" GridPane.rowIndex="3" GridPane.columnIndex="2" prefWidth="72" prefHeight="48"/>
+      <Button text="+" onAction="#onOperatorAction" GridPane.rowIndex="3" GridPane.columnIndex="3" prefWidth="72" prefHeight="48"/>
+      
+      <Button text="C" onAction="#onClearAction" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="4" prefWidth="320" prefHeight="40"/>
+    </GridPane>
+  </children>
+</VBox>
