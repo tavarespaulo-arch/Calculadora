@@ -25,6 +25,9 @@ public class CalculadoraController {
         }
     }
 
+    /*
+     * Método para adicionar o . no visor da calculadora.
+     */
     @FXML
     private void onDotAction(ActionEvent e) {
         if (novoNumero) {
