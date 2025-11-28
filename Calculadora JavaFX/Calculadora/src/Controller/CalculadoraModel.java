@@ -1,6 +1,8 @@
 package Controller;
 
-
+/**
+ * 
+ */
 public class CalculadoraModel {
 
     private Double operand = null; // Armazena o primeiro operando da operação
