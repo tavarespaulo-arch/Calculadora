@@ -1,9 +1,11 @@
 package Controller;
 
-
+/**
+ * 
+ */
 public class CalculadoraModel {
 
-    private Double operand = null;
+    private Double operand = null; // Armazena o primeiro operando da operação
     private String operator = null;
 
     public void pushNumber(double number) {
